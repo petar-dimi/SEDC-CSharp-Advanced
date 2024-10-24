@@ -6,12 +6,18 @@ using System.Threading.Tasks;
 
 namespace VehicleDisplayInfo
 {
-    public class Airplane : Vehicle
+    public class Car : Vehicle
     {
-        
+       
         public override void DisplayInfo()
         {
-            Console.WriteLine("I'm a plane and I have a winds and wheels :P");
+            Console.WriteLine("I'm a car and I drive on 4 wheels :)");
+        }
+
+        
+        public void Drive()
+        {
+            Console.WriteLine("Driving");
         }
     }
 }

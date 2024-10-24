@@ -11,7 +11,13 @@ namespace VehicleDisplayInfo
         
         public override void DisplayInfo()
         {
-            Console.WriteLine("I'm a plane and I have a winds and wheels :P");
+            Console.WriteLine("I'm a plane and I have a couple of wheels :)");
+        }
+
+       
+        public void Fly()
+        {
+            Console.WriteLine("Flying");
         }
     }
 }
