@@ -4,7 +4,7 @@
     {
         static void Main(string[] args)
         {
-            // 1. Filter all cars that have origin from Europe and print them in the console.
+            
             var europeanCars = CarsData.Cars.Where(car => car.Origin == "Europe").ToList();
             Console.WriteLine("European Cars:");
             foreach (var car in europeanCars)
@@ -12,8 +12,7 @@
                 Console.WriteLine(car.Model);
             }
 
-            // 2. Filter all cars that have more than 6 Cylinders not including 6, 
-            // then filter all cars that have exactly 4 Cylinders and HorsePower more than 110.0.
+           
             var filteredCars = CarsData.Cars
                 .Where(car => car.Cylinders > 6)
                 .Concat(CarsData.Cars
@@ -26,7 +25,7 @@
                 Console.WriteLine(car.Model);
             }
 
-            // 3. Count all cars based on their Origin and print the result.
+            
             var carsByOrigin = CarsData.Cars
                 .GroupBy(car => car.Origin)
                 .Select(g => $"{g.Key} {g.Count()} models")
@@ -38,8 +37,7 @@
                 Console.WriteLine(originCount);
             }
 
-            // 4. Filter all cars that have more than 200 HorsePower and find the lowest,
-            // highest, and average Miles per gallon.
+            
             var powerfulCars = CarsData.Cars.Where(car => car.HorsePower > 200).ToList();
             if (powerfulCars.Any())
             {
@@ -57,7 +55,7 @@
                 Console.WriteLine("\nNo cars found with HorsePower greater than 200.");
             }
 
-            // 5. Find the top 3 fastest-accelerating cars
+            
             var top3FastestCars = CarsData.Cars
                 .OrderBy(car => car.AccelerationTime)
                 .Take(3)
@@ -68,15 +66,13 @@
             {
                 Console.WriteLine(car.Model);
             }
-
-            // 6. Calculate the total weight of cars with more than 6 cylinders.
             var totalWeight = CarsData.Cars
                 .Where(car => car.Cylinders > 6)
                 .Sum(car => car.Weight);
 
             Console.WriteLine($"\nTotal weight of cars with more than 6 cylinders: {totalWeight}");
 
-            // 7. Find the average MilesPerGalon for cars with an even number of cylinders.
+            
             var evenCylinderCars = CarsData.Cars
                 .Where(car => car.Cylinders % 2 == 0)
                 .ToList();

@@ -8,6 +8,7 @@ namespace Homework07
 {
     public static class CarsData
     {
+        //P.S i didnt put all the cars in the list
         public static List<Car> Cars = new List<Car>();
         static CarsData()
         {
